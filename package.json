@@ -1,0 +1,25 @@
+{
+  "name": "t2b",
+  "version": "1.0.0",
+  "description": "Text to binary converion tool for terminal",
+  "main": "main.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thinker3197/t2b.git"
+  },
+  "keywords": [
+    "binary",
+    "text",
+    "ascii",
+    "coverter"
+  ],
+  "author": "thinker3197",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thinker3197/t2b/issues"
+  },
+  "homepage": "https://github.com/thinker3197/t2b#readme"
+}
