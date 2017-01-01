@@ -1,3 +1,3 @@
 # t2b
 
-Text to binary converion tool for terminal
+An autonomous conversion tool for cli
