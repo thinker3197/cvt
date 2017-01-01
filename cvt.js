@@ -7,18 +7,22 @@
  */
 const cli = require('commander'),
     pkg = require('./package.json'),
-    t2a = require('./lib/t2a');
+    t2a = require('./lib/t2a'),
+    a2t = require('./lib/a2t');
 
 const cvt = (data, options) => {
     if (options.textToAscii) {
         console.log(t2a(data));
+    } else if (options.asciiToText) {
+        console.log(a2t(data));
     }
 };
 
 cli
     .version(pkg.version)
     .arguments('<data>')
-    .option('--textToAscii', 'Convert text to Ascii value')
+    .option('--textToAscii', 'Convert text to ascii')
+    .option('--asciiToText', 'Convert ascii to text')
     .action(cvt);
 
 cli.parse(process.argv);
