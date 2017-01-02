@@ -8,13 +8,19 @@
 const cli = require('commander'),
     pkg = require('./package.json'),
     t2a = require('./lib/t2a'),
-    a2t = require('./lib/a2t');
+    a2t = require('./lib/a2t'),
+    t2h = require('./lib/t2h'),
+    h2t = require('./lib/h2t');
 
 const cvt = (data, options) => {
     if (options.textToAscii) {
-        console.log(t2a(data));
+        console.log('🔢 : ', t2a(data));
     } else if (options.asciiToText) {
-        console.log(a2t(data));
+        console.log('🔡 : ', a2t(data));
+    } else if (options.textToHex) {
+        console.log('🔢 : ', t2h(data));
+    } else if (options.hexToText) {
+        console.log('🔡 : ', h2t(data));
     }
 };
 
@@ -23,6 +29,8 @@ cli
     .arguments('<data>')
     .option('--textToAscii', 'Convert text to ascii')
     .option('--asciiToText', 'Convert ascii to text')
+    .option('--textToHex', 'Convert text to hex')
+    .option('--hexToText', 'Convert hex to text')
     .action(cvt);
 
 cli.parse(process.argv);
