@@ -10,7 +10,8 @@ const cli = require('commander'),
     t2a = require('./lib/t2a'),
     a2t = require('./lib/a2t'),
     t2h = require('./lib/t2h'),
-    h2t = require('./lib/h2t');
+    h2t = require('./lib/h2t'),
+    t2b = require('./lib/t2b');
 
 const cvt = (data, options) => {
     if (options.textToAscii) {
@@ -21,6 +22,8 @@ const cvt = (data, options) => {
         console.log('🔢 : ', t2h(data));
     } else if (options.hexToText) {
         console.log('🔡 : ', h2t(data));
+    } else if (options.textToBinary) {
+        console.log('🔢 : ', t2b(data));
     }
 };
 
@@ -31,6 +34,7 @@ cli
     .option('--asciiToText', 'Convert ascii to text')
     .option('--textToHex', 'Convert text to hex')
     .option('--hexToText', 'Convert hex to text')
+    .option('--textToBinary', 'Convert text to binary')
     .action(cvt);
 
 cli.parse(process.argv);

@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "An autonomous conversion tool for cli",
     "bin": {
-        "t2b": "./cvt.js"
+        "cvt": "./cvt.js"
     },
     "scripts": {
         "test": "npm test"
