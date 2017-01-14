@@ -12,7 +12,8 @@ const cli = require('commander'),
     t2h = require('./lib/t2h'),
     h2t = require('./lib/h2t'),
     t2b = require('./lib/t2b'),
-    b2t = require('./lib/b2t');
+    b2t = require('./lib/b2t'),
+    t2r = require('./lib/t2r');
 
 const cvt = (data, options) => {
     if (options.textToAscii) {
@@ -27,6 +28,8 @@ const cvt = (data, options) => {
         console.log('🔢 : ', t2b(data));
     } else if (options.binaryToText) {
         console.log('🔡 : ', b2t(data));
+    } else if (options.textToRandomCase) {
+        console.log('🔡 : ', t2r(data));
     }
 };
 
@@ -39,6 +42,7 @@ cli
     .option('--hexToText', 'Convert hex to text')
     .option('--textToBinary', 'Convert text to binary')
     .option('--binaryToText', 'Convert binary to text')
+    .option('--textToRandomCase', 'Convert text to random case')
     .action(cvt);
 
 cli.parse(process.argv);
