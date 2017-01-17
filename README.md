@@ -1,3 +1,3 @@
-# t2b
+# cvtb
 
 An autonomous conversion tool for cli
